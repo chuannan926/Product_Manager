@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .card {
+                /* Add shadows to create the "card" effect */
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+              }
+              
+              /* On mouse-over, add a deeper shadow */
+              .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+              }
+              
+              /* Add some padding inside the card container */
+              .container {
+                padding: 2px 16px;
+              }
+    </style>
+</head>
+<body>
+    <h1>Products List</h1>
+        
+        <div *ngFor="let product of all_product" class="card">
+            <img src="{{product.image}}" alt="Avatar" style="width:30%">
+            <div class="container">
+                <p>{{product.title}}</p>
+                <p>${{product.price}}</p> 
+            </div>
+            <button [routerLink] ="['/edit', product._id]">Edit</button>
+            <button (click) ="submitDeleteProduct(product._id)">Delete</button>
+        </div>
+ 
+
+</body>
+</html>

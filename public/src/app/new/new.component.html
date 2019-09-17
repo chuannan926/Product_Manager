@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create a New Product</h1>
+    <form>
+        Title: <input type="text" name="new_product.title"[(ngModel)]="new_product.title"/>
+        Price: <input type="text" name="new_product.price"[(ngModel)]="new_product.price"/>
+        Image url: <input type="text" name="new_product.image"[(ngModel)]="new_product.image"/>
+    
+        <button (click)="submitNewProduct()"[routerLink]="['/products']" type="button">Create</button>
+    </form>
+    <button [routerLink]="['/']">Cancel</button>
+</body>
+</html>
